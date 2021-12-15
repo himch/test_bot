@@ -1,0 +1,15 @@
+[Unit]
+Description=arch_scan_bot
+After=syslog.target
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/hh_test_bot
+ExecStart=/hh_test_bot/env/bin/python /hh_test_bot/bot.py
+RestartSec=5
+Restart=always
+ 
+[Install]
+WantedBy=multi-user.target
